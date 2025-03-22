@@ -38,14 +38,15 @@ app.use('/products',quotes)
 //app.use(express.static('./public'))
 
 // Alternatively, use the path from .env
-app.use(express.static(process.env.public_path))
+app.use(express.static(path.resolve(process.env.public_path)))
+
 
 // For any other request, send React's index.html
 app.get('*',(req,res)=>{
   res.sendFile(path.resolve(__dirname, 'public', 'build', 'index.html'))
 })
-
-app.listen(8989,()=>{
+const port=process.env.PORT || 8989;
+app.listen(port,()=>{
     console.log('Server is up on localhost:8989');
     
 })

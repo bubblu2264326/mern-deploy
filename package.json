@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "main": "express.js",
   "scripts": {
+     "start": "node express.js",
+  "vercel-build": "npm install",
     "dev": "nodemon express.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -24,7 +24,7 @@ app.use(cors())
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(process.env.mongo_url);
+  await mongoose.connect('mongodb+srv://saad:ry3jOjOD6HoHd1nG@cluster0.iaudp.mongodb.net/ecomerece?retryWrites=true&w=majority&appName=Cluster0');
   console.log('data base connectd....');
   
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
@@ -38,7 +38,7 @@ app.use('/products',quotes)
 //app.use(express.static('./public'))
 
 // Alternatively, use the path from .env
-app.use(express.static(path.resolve(process.env.public_path)))
+app.use(express.static(path.resolve('./public/build')))
 
 
 // For any other request, send React's index.html
